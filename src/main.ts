@@ -27,7 +27,7 @@ async function createApp() {
   const pmRem = new THREE.PMREMGenerator(renderer);
   pmRem.compileEquirectangularShader();
 
-  const envHdrTexture = await new RGBELoader().loadAsync('../src/assets/cannon-map.hdr');
+  const envHdrTexture = await new RGBELoader().loadAsync('/assets/cannon-map.hdr');
   const envRT = pmRem.fromEquirectangular(envHdrTexture);
 
   const ring1 = createRing(envRT.texture, 0.65, new THREE.Color('white'));
